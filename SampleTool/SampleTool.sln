@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTool", "SampleTool\SampleTool.csproj", "{0E7F0254-4ADB-48FF-910A-4467DEDD10C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03FD3288-12DB-4C14-A769-9556853B4943} = {03FD3288-12DB-4C14-A769-9556853B4943}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolLib", "ToolLib\ToolLib.csproj", "{03FD3288-12DB-4C14-A769-9556853B4943}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E7F0254-4ADB-48FF-910A-4467DEDD10C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7F0254-4ADB-48FF-910A-4467DEDD10C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7F0254-4ADB-48FF-910A-4467DEDD10C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7F0254-4ADB-48FF-910A-4467DEDD10C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FD3288-12DB-4C14-A769-9556853B4943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FD3288-12DB-4C14-A769-9556853B4943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FD3288-12DB-4C14-A769-9556853B4943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FD3288-12DB-4C14-A769-9556853B4943}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3373E31E-1EBD-42F8-AF1A-B0E6C6B493B3}
+	EndGlobalSection
+EndGlobal

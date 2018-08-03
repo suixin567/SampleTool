@@ -1,0 +1,9 @@
+/SampleTool/SampleTool/obj
+/SampleTool/ToolLib/obj
+
+
+/[Bb]uild/
+/[Bb]uilds/
+
+
+*.unitypackage
