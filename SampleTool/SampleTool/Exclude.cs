@@ -62,7 +62,7 @@ namespace DDBuildHelper
             //处理验证码***********************************           
             btnPos = new Point();
             result = MatchTemplate(ref btnPos);
-            if (result > 0.8)
+            if (result > 0.78)
             {
               //  MessageBox.Show("发现了验证码"+result);
                 TipSound.play(Application.StartupPath + @"\thank.wav");

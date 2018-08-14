@@ -83,20 +83,29 @@ namespace ToolLib
         //刷新截屏，外部类可以调用。
         public void Timer_TimesUp(object sender, System.Timers.ElapsedEventArgs e)
         {
-            //截图
-            Bitmap CatchBmp = new Bitmap(SW, SH);
-            Graphics g = Graphics.FromImage(CatchBmp);
-            //截游戏窗口图
-            Point p1 = new Point(0, 0);// m_mianFormLocation.X + m_mianFormSize.Width, m_mianFormLocation.Y);
-            Point p2 = new Point(0, 0);
-            g.CopyFromScreen(p1, p2, new Size(SW, SH));
-            Image<Bgr, Byte> tempGame = new Image<Bgr, byte>(CatchBmp);
-            game = tempGame.Clone();
-            g.Dispose();
-            CatchBmp.Dispose();
-            tempGame.Dispose();
-            // isMoveCanCopy = true;
-           // Debug.Print("打印啊");
+            try
+            {
+                //截图
+                Bitmap CatchBmp = new Bitmap(SW, SH);
+                Graphics g = Graphics.FromImage(CatchBmp);
+                //截游戏窗口图
+                Point p1 = new Point(0, 0);// m_mianFormLocation.X + m_mianFormSize.Width, m_mianFormLocation.Y);
+                Point p2 = new Point(0, 0);
+
+                g.CopyFromScreen(p1, p2, new Size(SW, SH));
+                Image<Bgr, Byte> tempGame = new Image<Bgr, byte>(CatchBmp);
+                game = tempGame.Clone();
+                g.Dispose();
+                CatchBmp.Dispose();
+                tempGame.Dispose();
+                // isMoveCanCopy = true;
+                // Debug.Print("打印啊");
+            }
+            catch (Exception)
+            {
+
+            }
+         
         }
     }
 }
