@@ -30,26 +30,26 @@ namespace DDBuildHelper
         #region 属性
         Image<Bgr, byte> game;
         Image<Bgr, byte> tar;
-        Timer timerExcludeOKButton;//排除确定按钮
+        Timer timerExcludeYZM;//排除YZM
         #endregion
 
 
         public void init() {
-            timerExcludeOKButton = new System.Windows.Forms.Timer();
-            timerExcludeOKButton.Interval = 6000;
-            timerExcludeOKButton.Enabled = true;
-            timerExcludeOKButton.Tick += new EventHandler(timerExcludeOKButtonCallBack);
-            timerExcludeOKButton.Stop();
+            timerExcludeYZM = new System.Windows.Forms.Timer();
+            timerExcludeYZM.Interval = 6000;
+            timerExcludeYZM.Enabled = true;
+            timerExcludeYZM.Tick += new EventHandler(timerExcludeOKButtonCallBack);
+            timerExcludeYZM.Stop();
         }
 
         public void start() {
             tar = new Image<Bgr, byte>(SampleTool.Properties.Resources.yzm);
-            timerExcludeOKButton.Start();
+            timerExcludeYZM.Start();
         }
 
 
         public void stop() {
-            timerExcludeOKButton.Stop();
+            timerExcludeYZM.Stop();
         }
 
         //确定 teamviewer 和其他的一些 干扰排除
@@ -65,7 +65,9 @@ namespace DDBuildHelper
             if (result > 0.78)
             {
               //  MessageBox.Show("发现了验证码"+result);
-                TipSound.play(Application.StartupPath + @"\thank.wav");
+             //   TipSound.play(Application.StartupPath + @"\thank.wav");
+                SendPhoneCode.sendVerifyPhoneMsg("15731442031", "注册验证码666，2分钟内有效。");
+                Environment.Exit(0);
             }
             else {
                 //   MessageBox.Show(result.ToString());

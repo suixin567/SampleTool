@@ -176,6 +176,14 @@ namespace DDBuildHelper
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            IntPtr maindHwnd = (IntPtr)263822;
+            Bitmap bitmap =  CaptureWindow.GetWindowCapture(maindHwnd);
+            Image<Bgr, Byte> tempGame = new Image<Bgr, byte>(bitmap);
+            showLogSafePost("游戏窗口截屏",tempGame);
+        }
     }
 
 
