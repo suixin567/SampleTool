@@ -22,7 +22,6 @@ namespace DDBuildHelper
 
         #region 属性
         public SynchronizationContext m_SyncContext = null;
-
         #endregion
 
         public Form1()
@@ -31,11 +30,7 @@ namespace DDBuildHelper
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //int x = (2100);
-            //int y = (700);
-            //this.StartPosition = FormStartPosition.Manual;
-            //this.Location = (Point)new Size(x, y);
+        {            
             m_SyncContext = SynchronizationContext.Current;
 
             //开启截屏
@@ -45,9 +40,9 @@ namespace DDBuildHelper
             //注册键盘事件
             KeyMgr.Instance.hook_KeyUp_Event += this.hook_KeyUp;
 
+            //执行逻辑
             Exclude.Instance.init();
             Exclude.Instance.start();
-
         }
 
 
@@ -119,11 +114,6 @@ namespace DDBuildHelper
         }
 
 
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         void hook_KeyUp(object sender, KeyEventArgs e)
         {
             
@@ -179,10 +169,19 @@ namespace DDBuildHelper
 
         private void button2_Click(object sender, EventArgs e)
         {
-            IntPtr maindHwnd = (IntPtr)263822;
-            Bitmap bitmap =  CaptureWindow.GetWindowCapture(maindHwnd);
-            Image<Bgr, Byte> tempGame = new Image<Bgr, byte>(bitmap);
-            showLogSafePost("游戏窗口截屏",tempGame);
+            try
+            {
+                IntPtr maindHwnd = (IntPtr)263822;
+                Bitmap bitmap = CaptureWindow.GetWindowCapture(maindHwnd);
+                Image<Bgr, Byte> tempGame = new Image<Bgr, byte>(bitmap);
+                showLogSafePost("游戏窗口截屏", tempGame);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("窗体不存在");
+            }
+        
         }
     }
 

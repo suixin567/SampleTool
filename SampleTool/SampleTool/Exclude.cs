@@ -4,6 +4,7 @@ using Emgu.CV.Structure;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -66,7 +67,7 @@ namespace DDBuildHelper
             {
               //  MessageBox.Show("发现了验证码"+result);
              //   TipSound.play(Application.StartupPath + @"\thank.wav");
-                SendPhoneCode.sendVerifyPhoneMsg("15731442031", "注册验证码666，2分钟内有效。");
+                SendPhoneCode.sendVerifyPhoneMsg(ConfigurationManager.AppSettings["phone"] , "注册验证码666，2分钟内有效。");
                 Environment.Exit(0);
             }
             else {
