@@ -15,6 +15,10 @@ namespace ToolLib
 
         public static int sendVerifyPhoneMsg(string phoneNum, string content)
         {
+            if (phoneNum.Length!=11)
+            {
+                return -1;
+            }
             //设置全局参数：路径和是否需要日志
             GlobalParams gp = new GlobalParams();
             gp.setRequestPath("/sms/v2/std/");
